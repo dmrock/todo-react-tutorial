@@ -1,4 +1,5 @@
-import BackgroundHeading from './components/BackgroundHeading';
+import BackgroundHeading from './BackgroundHeading';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -10,13 +11,7 @@ function App() {
         <ul></ul>
         <section className="col-[2/3] row-[2/3] bg-[#fffcf9] border-l border-black/[0.08]"></section>
       </main>
-
-      <footer className="flex justify-between w-[972px] items-center text-[11px] opacity-30 mt-[12px]">
-        <small className="text-[11px]">&copy; 2025. Copyright by dmrock.</small>
-        <p>
-          Version <b>0.1</b> (beta)
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }
