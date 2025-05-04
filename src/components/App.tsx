@@ -1,15 +1,10 @@
 import { useState } from 'react';
+import { Todo } from '../lib/types';
 import BackgroundHeading from './BackgroundHeading';
 import Footer from './Footer';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import TodoList from './TodoList';
-
-export type Todo = {
-  id: number;
-  text: string;
-  isCompleted: boolean;
-};
 
 function App() {
   // State
