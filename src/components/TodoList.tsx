@@ -1,13 +1,10 @@
-import { Todo } from '../lib/types';
+import { useContext } from 'react';
 import DeleteButton from './DeleteButton';
+import { TodosContext } from '../contexts/TodosContextProvider';
 
-type TodoListProps = {
-  todos: Todo[];
-  handleToggleTodo: (id: number) => void;
-  handleDeleteTodo: (id: number) => void;
-};
+export default function TodoList() {
+  const { todos, handleToggleTodo, handleDeleteTodo } = useContext(TodosContext);
 
-export default function TodoList({ todos, handleToggleTodo, handleDeleteTodo }: TodoListProps) {
   return (
     <ul>
       {todos.length === 0 && (
@@ -24,7 +21,7 @@ export default function TodoList({ todos, handleToggleTodo, handleDeleteTodo }: 
           <span className={`${todo.isCompleted ? 'line-through text-[#ccc]' : ''}`}>
             {todo.text}
           </span>
-          <DeleteButton id={todo.id} handleDeleteTodo={handleDeleteTodo} />
+          <DeleteButton id={todo.id} onDeleteTodo={handleDeleteTodo} />
         </li>
       ))}
     </ul>

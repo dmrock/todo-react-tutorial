@@ -1,10 +1,13 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
 import App from './components/App.tsx';
+import TodosContextProvider from './contexts/TodosContextProvider.tsx';
+import './index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <TodosContextProvider>
+      <App />
+    </TodosContextProvider>
   </StrictMode>,
 );
