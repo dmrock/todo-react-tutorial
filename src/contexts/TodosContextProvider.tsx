@@ -5,7 +5,16 @@ type TodosContextProviderProps = {
   children: React.ReactNode;
 };
 
-export const TodosContext = createContext(null);
+type TTodosContext = {
+  todos: Todo[];
+  totalNumberOfTodos: number;
+  numberOfCompletedTodos: number;
+  handleAddTodo: (todoText: string) => void;
+  handleToggleTodo: (id: number) => void;
+  handleDeleteTodo: (id: number) => void;
+};
+
+export const TodosContext = createContext<TTodosContext | null>(null);
 
 export default function TodosContextProvider({ children }: TodosContextProviderProps) {
   // State

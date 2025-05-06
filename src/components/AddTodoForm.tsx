@@ -1,10 +1,10 @@
-import { useContext, useState } from 'react';
-import { TodosContext } from '../contexts/TodosContextProvider';
+import { useState } from 'react';
+import { useTodosContext } from '../lib/hooks';
 import Button from './Button';
 
 export default function AddTodoForm() {
   const [todoText, setTodoText] = useState('');
-  const { handleAddTodo } = useContext(TodosContext);
+  const { handleAddTodo } = useTodosContext();
 
   return (
     <form
